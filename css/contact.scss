@@ -1,86 +1,223 @@
 body {
     background-color: #213E8C;
     font-family: 'Poppins', sans-serif;
+    width: 100%;
     margin: 0;
     padding: 0;
 }
+
+a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+// Header
+header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    padding: 0.9em;
+    z-index: 999;
+    align-items: center;
+
+    svg {
+        width: 2.3em;
+        padding: 0;
+        cursor: pointer;
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: rgb(154, 206, 255);
+    font-weight: 600;
+
+    svg {
+        padding: 0;
+        margin: auto;
+        width: 3em;
+        fill:#ffdac1;
+    }
+}
+
+nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    background: rgb(0, 132, 255);
+    height: 100vh;
+    width: 70%;
+    z-index: 999;
+    transform: translateX(100%);
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 8em;
+
+        a {
+            color: white;
+            padding: .8em 2.5em;
+            font-weight: 300;
+            display: block;
+            
+            &:hover {
+                background: rgb(1, 114, 220);
+            }
+        }
+    }
+
+    .close {
+        float: right;
+        margin: 1.5em;
+        width: 2.5em;
+    }
+}
+
+.open-nav {
+    transform: translateX(0);
+}
+
+.transition {
+    transition: transform .5s ease-in-out;
+}
   
 section.hero {
-    margin-bottom: 1em;
-    margin-top: 1em;
+    margin: 6em 0em 2em 0em;
 }
 
 h1 {
     font-size: 4em;
     text-align: center;
     color: #D7CFCF;
+    margin: 0;
 }
 
 h2 {
     font-size: 2.5em;
+    color: #323232;
+    margin: 0;
 }
 
 h3 {
-    font-weight: 200;
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 2rem;
+    color: rgb(78, 78, 78);
 }
 
-.contact-box {
+p {
+    margin: 0;
+}
+
+// Section Contact
+section.contact-box {
     text-align: center;
     background-color: #CFE1FF;
+    margin: 0;
+    padding: 0;
 }
 
+// Contact Part
 .contact-left {
-    min-width: 50%;
-}
-
-.contact-right {
-    img {
-        height: 100%;
-        width: 100%;
-    }
-    overflow: hidden;
+    padding: 2em 1em;
 }
 
 .input-row .input-group {
-    flex-basis: 45%;
+    padding: 0;
+}
+
+label {
+    color: rgb(60, 60, 60);
 }
 
 input {
     background-color: #CFE1FF;
-    font-size: 20px;
+    font-size: 1rem;
     width: 60%;
     border: none;
     border-bottom: 1px solid black;
     outline: none;
-    padding-bottom: 5px;
-    margin-top: 3em;
-    margin-bottom: 3em;
+    padding-bottom: .5rem;
+    margin: 1.5em 0em;
 }
 
 textarea {
     background-color: #CFE1FF;
-    font-size: 20px;
+    font-size: 1rem;
     width: 100%;
     border: 1px solid #CFE1FF;
     outline: none;
-    padding: 10px;
+    padding: .5em;
     box-sizing: border-box;
     border-bottom: 1px solid black;
+    resize: none;
 }
 
 button {
-    background: #213E8C;
-    width: 100px;
+    background-color: #213E8C;
+    transition: background-color .35s;
+    width: 10em;
     border: none;
     outline: none;
     color: #fff;
     height: 35px;
-    border-radius: 30px;
-    margin-top: 20px;
-    box-shadow: 0px 5px 15px 0px rgba(28, 0, 181, 0.3);
+    border-radius: 3em;
+    margin-top: 2em;
+    font-size: 1rem;
+
+    &:hover {
+        background-color: #011753;
+        cursor: pointer;
+    }
+}
+
+// Image Part
+img {
+    display: block;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+// Footer
+footer {
+    background-color: rgb(0, 38, 73);
+    
+    p {
+        color: #FFFFFF;
+        padding-bottom: 0.25em;
+        padding-top: 0.25em;
+        font-size: 0.9rem;
+        text-align: center;
+        font-weight: 300;
+    }
+
+    a {
+        color: #FFFFFF;
+        font-size: 0.9rem;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 @media only screen and (min-width: 606px) {
+    header {
+        padding-left: 3em;
+        padding-right: 3em;
+    }
+
     h1 {
         font-size: 4em;
         text-align: center;
@@ -92,7 +229,7 @@ button {
     }
     
     .contact-left {
-        padding: 40px 60px;
+        padding: 3em 3em;
     }
     
     .contact-right {
@@ -102,6 +239,48 @@ button {
 }
 
 @media only screen and (min-width: 960px) {
+    .menu {
+        display: none;
+    }
+
+    nav {
+        transform: translateX(0);
+        position: unset;
+        display: block;
+        width: auto;
+        height: auto;
+        background: none;
+
+        .close {
+            display: none;
+        }
+
+        ul {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            
+            a {
+                padding: 0.05em 0.5em 0em 0.5em;
+                color: rgb(156, 207, 255);
+                transition: color 0.4s;
+                font-size: 1.15rem;
+                font-weight: 600;
+                font-style: italic;
+                cursor: pointer;
+
+                &:hover {
+                    background: none;
+                    color: rgb(0, 106, 206);
+                }
+            }
+
+            .contact {
+                color: rgb(71, 166, 255);
+            }
+        }
+    }
+
     h1 {
         font-size: 4em;
         text-align: center;
@@ -109,13 +288,13 @@ button {
     }
     
     .contact-box {
-        display: flex;
+        display: grid;
+        grid-template-columns: .5fr .5fr;
         background-color: #CFE1FF
     }
     
     .contact-left {
-        padding: 40px 60px;
-        min-width: 50%;
+        padding: 3em 2em;
     }
     
     .contact-right {
@@ -126,5 +305,28 @@ button {
             width: auto;
             height: 100%;
         }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    header {
+        padding-left: 5em;
+        padding-right: 10em;
+    }
+
+    section.hero {
+        margin-top: 8em;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    .contact-box {
+        grid-template-columns: .6fr .4fr;
+    }
+
+    .contact-left {
+        padding: 4em 4em;
     }
 }
