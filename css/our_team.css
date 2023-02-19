@@ -1,0 +1,292 @@
+body {
+  margin: 0em;
+  font-family: "Poppins", sans-serif;
+  background-color: hsl(210deg, 100%, 32%);
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.9em;
+  z-index: 999;
+  align-items: center;
+}
+header svg {
+  width: 2.3em;
+  padding: 0;
+  cursor: pointer;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  color: rgb(154, 206, 255);
+  font-weight: 600;
+}
+.logo svg {
+  padding: 0;
+  margin: auto;
+  width: 3em;
+  fill: #ffdac1;
+}
+
+nav {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: rgb(0, 132, 255);
+  height: 100vh;
+  width: 70%;
+  z-index: 999;
+  transform: translateX(100%);
+}
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 8em;
+}
+nav ul a {
+  color: white;
+  padding: 0.8em 2.5em;
+  font-weight: 300;
+  display: block;
+}
+nav ul a:hover {
+  background: rgb(1, 114, 220);
+}
+nav .close {
+  float: right;
+  margin: 1.5em;
+  width: 2.5em;
+}
+
+.open-nav {
+  transform: translateX(0);
+}
+
+.transition {
+  transition: transform 0.5s ease-in-out;
+}
+
+.hero {
+  color: rgb(198, 227, 255);
+  margin-top: 6em;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 0em;
+  padding-bottom: 0.2em;
+}
+
+p {
+  font-weight: 400;
+  font-size: 0.95rem;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin: 0;
+  padding-bottom: 2em;
+}
+
+.members {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+  background-color: rgb(156, 207, 255);
+  padding: 2em;
+}
+
+.container {
+  position: relative;
+  width: 20em;
+  height: 25em;
+  padding-top: 3em;
+  margin-bottom: 3em;
+}
+.container .hover {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  margin: 0;
+  padding: 0;
+}
+.container .hover img {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 3%;
+}
+.container .hover .bio {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  top: 2.5%;
+  left: 2.5%;
+  width: 95%;
+  height: 95%;
+  padding: 0;
+  background-color: rgb(0, 60, 116);
+  border-radius: 3%;
+  border-style: solid;
+  border-width: 0.05em;
+  border-color: #000000;
+}
+.container .hover .bio h3 {
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 1em 0em 0em 0em;
+}
+.container .hover .bio p {
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 300;
+  text-align: left;
+  padding: 0.75em 0.5em;
+  line-height: 1.5em;
+}
+.container .name-tag {
+  position: absolute;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  bottom: 0;
+  right: 0;
+  background-color: rgb(0, 60, 116);
+  width: 70%;
+  text-align: left;
+  padding: 1em 0.75em;
+  border-radius: 0.3em/0.3em;
+  border-style: solid;
+  border-width: 0.05em;
+  border-color: #000000;
+}
+.container .name-tag h2 {
+  margin: 0;
+  color: white;
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+.container .name-tag p {
+  margin: 0;
+  padding: 0.25em 0em 0em 0.25em;
+  color: rgb(126, 126, 126);
+}
+.container:hover .bio {
+  opacity: 0.925;
+}
+.container:hover .name-tag {
+  opacity: 0;
+}
+
+footer {
+  background-color: rgb(0, 38, 73);
+}
+footer p {
+  color: #FFFFFF;
+  padding-bottom: 0.25em;
+  padding-top: 0.25em;
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 300;
+}
+footer a {
+  color: #FFFFFF;
+  font-size: 0.9rem;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 606px) {
+  header {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+  p {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+}
+@media only screen and (min-width: 960px) {
+  .menu {
+    display: none;
+  }
+  nav {
+    transform: translateX(0);
+    position: unset;
+    display: block;
+    width: auto;
+    height: auto;
+    background: none;
+  }
+  nav .close {
+    display: none;
+  }
+  nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  nav ul a {
+    padding: 0.05em 0.5em 0em 0.5em;
+    color: rgb(156, 207, 255);
+    transition: color 0.4s;
+    font-size: 1.15rem;
+    font-weight: 600;
+    font-style: italic;
+    cursor: pointer;
+  }
+  nav ul a:hover {
+    background: none;
+    color: rgb(0, 106, 206);
+  }
+  nav ul .team {
+    color: rgb(71, 166, 255);
+  }
+  p {
+    padding-left: 5em;
+    padding-right: 5em;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  header {
+    padding-left: 5em;
+    padding-right: 10em;
+  }
+  h1 {
+    font-size: 4rem;
+  }
+  .hero {
+    margin-top: 8em;
+  }
+  .hero p {
+    padding-left: 10em;
+    padding-right: 10em;
+    padding-top: 1em;
+    font-size: 1.1rem;
+  }
+  .members {
+    margin: 2.5em 2.5em 0em 2.5em;
+  }
+}/*# sourceMappingURL=our_team.css.map */
